@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v5-small-header';
+const CACHE_NAME = 'ayudamc-v6-tabs-ui';
 const ASSETS = [
     './',
     './index.html',
