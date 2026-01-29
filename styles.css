@@ -205,13 +205,21 @@ body {
 .modal-overlay.active { display: flex; }
 .modal {
   background: #1a3c40;
-  width: 85%;
+  width: 95%; /* Wider on mobile */
   border-radius: 15px;
-  padding: 20px;
+  padding: 15px; /* Slightly less padding */
   border: 1px solid var(--accent-teal);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  max-height: 85vh; /* Prevent overflowing screen */
-  overflow-y: auto; /* Allow scrolling inside modal */
+  max-height: 90dvh; /* Max height relative to dynamic viewport */
+  display: flex;
+  flex-direction: column; /* Stack children */
+}
+#editor-fields {
+    overflow-y: auto; /* Scroll only the form part */
+    flex: 1; /* Take available space */
+    min-height: 0; /* Required for flex scrolling */
+    margin-bottom: 10px;
+    padding-right: 5px; /* Avoid scrollbar covering content */
 }
 .modal h3 { margin: 0 0 15px 0; color: var(--accent-teal); }
 .form-group { margin-bottom: 12px; }

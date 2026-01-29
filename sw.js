@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v13-coord-scroll-fix';
+const CACHE_NAME = 'ayudamc-v14-modal-layout';
 const ASSETS = [
     './',
     './index.html',
