@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v7-pdf-logic-fix';
+const CACHE_NAME = 'ayudamc-v8-hires-images';
 const ASSETS = [
     './',
     './index.html',
