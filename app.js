@@ -469,14 +469,29 @@ const app = {
         const startDraw = (e) => {
             this.state.isDrawing = true;
             const rect = this.state.canvas.getBoundingClientRect();
-            this.state.lastX = (e.clientX || e.touches[0].clientX) - rect.left;
-            this.state.lastY = (e.clientY || e.touches[0].clientY) - rect.top;
+            
+            // Fix: Calculate exact scale in case canvas is stretched by CSS
+            const scaleX = this.state.canvas.width / rect.width;
+            const scaleY = this.state.canvas.height / rect.height;
+
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+
+            this.state.lastX = (clientX - rect.left) * scaleX;
+            this.state.lastY = (clientY - rect.top) * scaleY;
         };
         const draw = (e) => {
             if (!this.state.isDrawing) return;
             const rect = this.state.canvas.getBoundingClientRect();
-            const x = (e.clientX || e.touches[0].clientX) - rect.left;
-            const y = (e.clientY || e.touches[0].clientY) - rect.top;
+            
+            const scaleX = this.state.canvas.width / rect.width;
+            const scaleY = this.state.canvas.height / rect.height;
+
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+
+            const x = (clientX - rect.left) * scaleX;
+            const y = (clientY - rect.top) * scaleY;
             
             ctx.beginPath();
             ctx.moveTo(this.state.lastX, this.state.lastY);

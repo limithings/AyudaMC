@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v12-revert-canvas';
+const CACHE_NAME = 'ayudamc-v13-coord-scroll-fix';
 const ASSETS = [
     './',
     './index.html',

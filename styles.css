@@ -210,6 +210,8 @@ body {
   padding: 20px;
   border: 1px solid var(--accent-teal);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  max-height: 85vh; /* Prevent overflowing screen */
+  overflow-y: auto; /* Allow scrolling inside modal */
 }
 .modal h3 { margin: 0 0 15px 0; color: var(--accent-teal); }
 .form-group { margin-bottom: 12px; }
