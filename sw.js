@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v6-tabs-ui';
+const CACHE_NAME = 'ayudamc-v7-pdf-logic-fix';
 const ASSETS = [
     './',
     './index.html',

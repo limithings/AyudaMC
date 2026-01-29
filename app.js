@@ -558,6 +558,13 @@ const app = {
                 <div class="form-group"><label class="form-label">Usuario</label><input type="text" id="edit-user" class="form-input" value="${item.user}"></div>
                 <div class="form-group"><label class="form-label">Contraseña</label><input type="text" id="edit-pass" class="form-input" value="${item.pass}"></div>
                 <div class="form-group"><label class="form-label">Orden</label><input type="number" id="edit-order" class="form-input" value="${item.order}"></div>`;
+        } else if (action.includes('OTConsumable')) {
+             title.textContent = 'OT Consumible';
+             const item = id ? this.data.ot_consumables.find(x => x.id === id) : { name: '', code: '', order: 99 };
+             fields.innerHTML = `
+                <div class="form-group"><label class="form-label">Apartado</label><input type="text" id="edit-ot-name" class="form-input" value="${item.name}"></div>
+                <div class="form-group"><label class="form-label">Código</label><input type="text" id="edit-ot-code" class="form-input" value="${item.code}"></div>
+                <div class="form-group"><label class="form-label">Orden</label><input type="number" id="edit-ot-order" class="form-input" value="${item.order}"></div>`;
         } else if (action.includes('Consumable')) {
              title.textContent = 'Editar Consumible';
              const item = id ? this.data.consumables.find(x => x.code === id) : { code: '', desc: '' };
@@ -585,13 +592,6 @@ const app = {
                 <div class="form-group"><label class="form-label">Tarea</label><input type="text" id="edit-tar-desc" class="form-input" value="${item.tarea}"></div>
                 <div class="form-group"><label class="form-label">Tiempo</label><input type="text" id="edit-tar-time" class="form-input" value="${item.tiempo}"></div>
                 <div class="form-group"><label class="form-label">Hora Inicio</label><input type="time" id="edit-tar-ini" class="form-input" value="${item.inicio}"></div>`;
-        } else if (action.includes('OTConsumable')) {
-             title.textContent = 'OT Consumible';
-             const item = id ? this.data.ot_consumables.find(x => x.id === id) : { name: '', code: '', order: 99 };
-             fields.innerHTML = `
-                <div class="form-group"><label class="form-label">Apartado</label><input type="text" id="edit-ot-name" class="form-input" value="${item.name}"></div>
-                <div class="form-group"><label class="form-label">Código</label><input type="text" id="edit-ot-code" class="form-input" value="${item.code}"></div>
-                <div class="form-group"><label class="form-label">Orden</label><input type="number" id="edit-ot-order" class="form-input" value="${item.order}"></div>`;
         } else if (action.includes('Recuerdo')) {
              title.textContent = 'Recuerdo / Foto';
              const item = id ? this.data.recuerdos.find(x => x.id === id) : { category: '', title: '', desc: '', image: '' };
