@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v8-hires-images';
+const CACHE_NAME = 'ayudamc-v10-canvas-css-fix';
 const ASSETS = [
     './',
     './index.html',
