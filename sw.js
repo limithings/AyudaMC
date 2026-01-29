@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v2-mobile';
+const CACHE_NAME = 'ayudamc-v3-mobile-fixed';
 const ASSETS = [
     './',
     './index.html',
