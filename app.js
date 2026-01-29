@@ -503,8 +503,26 @@ const app = {
                 const img = new Image();
                 img.onload = () => {
                     const ctx = this.state.ctx;
-                    ctx.clearRect(0,0,300,300);
-                    ctx.drawImage(img, 0, 0, 300, 300);
+                    const canvas = this.state.canvas;
+                    
+                    // Calculate Aspect Ratio
+                    const maxWidth = 300;
+                    const scale = maxWidth / img.width;
+                    const newWidth = maxWidth;
+                    const newHeight = img.height * scale;
+
+                    // Resize Canvas (Resetting context)
+                    canvas.width = newWidth;
+                    canvas.height = newHeight;
+
+                    // Restore Context Styles
+                    ctx.lineCap = 'round';
+                    ctx.lineJoin = 'round';
+                    ctx.strokeStyle = '#ff0000';
+                    ctx.lineWidth = 3;
+
+                    // Draw Image
+                    ctx.drawImage(img, 0, 0, newWidth, newHeight);
                 }
                 img.src = e.target.result;
             }
@@ -656,7 +674,7 @@ const app = {
             const cat = document.getElementById('edit-rec-cat').value;
             const title = document.getElementById('edit-rec-title').value;
             const desc = document.getElementById('edit-rec-desc').value;
-            const image = this.state.canvas.toDataURL('image/jpeg', 0.8);
+            const image = this.state.canvas.toDataURL('image/jpeg', 0.7);
 
             if (action === 'addRecuerdo') this.data.recuerdos.push({ id: Date.now(), category: cat, title, desc, image });
             else { const i = this.data.recuerdos.find(x => x.id === id); if(i) { i.category = cat; i.title = title; i.desc = desc; i.image = image; } }
