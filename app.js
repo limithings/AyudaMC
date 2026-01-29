@@ -503,31 +503,8 @@ const app = {
                 const img = new Image();
                 img.onload = () => {
                     const ctx = this.state.ctx;
-                    const canvas = this.state.canvas;
-                    
-                    // Calculate Aspect Ratio
-                    const maxWidth = 800; // Increased from 300 for better quality
-                    let newWidth = img.width;
-                    let newHeight = img.height;
-
-                    if (img.width > maxWidth) {
-                        const scale = maxWidth / img.width;
-                        newWidth = maxWidth;
-                        newHeight = img.height * scale;
-                    }
-
-                    // Resize Canvas (Resetting context)
-                    canvas.width = newWidth;
-                    canvas.height = newHeight;
-
-                    // Restore Context Styles
-                    ctx.lineCap = 'round';
-                    ctx.lineJoin = 'round';
-                    ctx.strokeStyle = '#ff0000';
-                    ctx.lineWidth = 3;
-
-                    // Draw Image
-                    ctx.drawImage(img, 0, 0, newWidth, newHeight);
+                    ctx.clearRect(0, 0, 300, 300);
+                    ctx.drawImage(img, 0, 0, 300, 300);
                 }
                 img.src = e.target.result;
             }

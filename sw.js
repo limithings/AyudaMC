@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayudamc-v11-canvas-final';
+const CACHE_NAME = 'ayudamc-v12-revert-canvas';
 const ASSETS = [
     './',
     './index.html',
