@@ -443,6 +443,32 @@ canvas {
     font-size: 12px;
 }
 .control-btn.active {
-    background: var(--accent-teal);
-    color: black;
+
+/* MOBILE RESPONSIVE TWEAKS */
+@media (max-width: 500px) {
+  body {
+    background-color: #1a1a1a; 
+  }
+  
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  /* Hide the fake notch and status bar on real phones */
+  .phone-frame::before {
+    display: none;
+  }
+  .status-bar {
+    display: none;
+  }
+
+  /* Adjust Header padding since status bar is gone */
+  .header {
+    padding-top: 15px; /* Add safe area if needed, or just standard padding */
+  }
 }
