@@ -506,10 +506,15 @@ const app = {
                     const canvas = this.state.canvas;
                     
                     // Calculate Aspect Ratio
-                    const maxWidth = 300;
-                    const scale = maxWidth / img.width;
-                    const newWidth = maxWidth;
-                    const newHeight = img.height * scale;
+                    const maxWidth = 800; // Increased from 300 for better quality
+                    let newWidth = img.width;
+                    let newHeight = img.height;
+
+                    if (img.width > maxWidth) {
+                        const scale = maxWidth / img.width;
+                        newWidth = maxWidth;
+                        newHeight = img.height * scale;
+                    }
 
                     // Resize Canvas (Resetting context)
                     canvas.width = newWidth;

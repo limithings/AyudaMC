@@ -116,7 +116,12 @@
           <!-- 4. DESCARGOS -->
           <div id="tab-descargos" class="tab-content" style="height: 100%">
             <div class="pdf-container">
-              <embed src="Flujo Descargos.pdf" type="application/pdf" class="pdf-iframe" width="100%" height="100%">
+                <object data="Flujo Descargos.pdf" type="application/pdf" width="100%" height="100%">
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #aaa;">
+                        <p>Tu navegador no muestra PDFs aquí.</p>
+                        <a href="Flujo Descargos.pdf" target="_blank" class="btn btn-save" style="text-decoration: none; color: black;">📄 Abrir Documento</a>
+                    </div>
+                </object>
             </div>
           </div>
 
