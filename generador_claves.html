@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Claves AyudaMC</title>
+    <style>
+        body { background: #333; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: #444; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        input { padding: 10px; font-size: 18px; text-align: center; width: 200px; display: block; margin: 20px auto; border-radius: 5px; border: none; }
+        button { background: #4fd1c5; border: none; padding: 10px 20px; font-size: 18px; cursor: pointer; border-radius: 5px; color: #000; font-weight: bold; }
+        #result { font-size: 32px; margin-top: 20px; color: #4fd1c5; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔑 Generador de Claves</h1>
+        <p>Introduce el ID que le aparece al operario:</p>
+        <input type="number" id="device-id" placeholder="Ej: 154820">
+        <button onclick="generate()">Generar Código</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function generate() {
+            const id = parseInt(document.getElementById('device-id').value);
+            if (!id) return;
+            
+            // ALGORITHM: (ID * 2) + 777
+            const code = (id * 2) + 777;
+            
+            document.getElementById('result').innerText = code;
+        }
+    </script>
+</body>
+</html>
